@@ -14,13 +14,9 @@ starts_n_ends = {}
 
 for i in df['start_location'].unique():
     try:
+        data = df[(df['start_location'] == i) | (df['end_location'] == i)]
         starts_n_ends[i] = data_end[i] - data_start[i]
-        days = []
-        data = df[df['start_location'] == i]['day']
-        for j in data:
-            if j not in days:
-                days.append(j)
-        starts_n_ends[i] /= len(days)
+        starts_n_ends[i] /= data['day'].unique().shape[0]
     except KeyError as exp:
         pass
 
