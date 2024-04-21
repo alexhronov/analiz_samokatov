@@ -2,10 +2,12 @@ import pandas as pd
 from datetime import datetime
 from math import ceil
 
+
 def get_dur(d1: str, d2: str):
     date1 = datetime.strptime(d1, '%Y-%m-%d %H:%M:%S')
     date2 = datetime.strptime(d2, '%Y-%m-%d %H:%M:%S')
     return ceil((date2 - date1).seconds / 60)
+
 
 def get_cost(d1: str, dur: int, promo: int):
     date1 = datetime.strptime(d1, '%Y-%m-%d %H:%M:%S')
