@@ -33,7 +33,7 @@ def get_cost(d1: str, dur: int, promo: int):
         elif 16 <= date1.hour <= 21:
             res += dur * 7
         else:
-            res += dur * 8
+            res += dur * 6
     return res
 
 
